@@ -25,7 +25,12 @@ function Navbar() {
 
 	return (
 		<React.Fragment>
-			<AppBar>
+			<AppBar
+				sx={{ backgroundColor: "rgba(0,0,0,0)" }}
+				color="inherit"
+				elevation={0}
+				position="fixed"
+			>
 				<Toolbar>
 					<Typography
 						variant="h6"

@@ -41,7 +41,7 @@ const NavbarDrawer = () => {
 				</List>
 			</Drawer>
 			<IconButton
-				sx={{ color: "white", marginLeft: "auto" }}
+				sx={{ color: "inherit", marginLeft: "auto" }}
 				onClick={() => setOpenDrawer(!openDrawer)}
 			>
 				<MenuIcon />
