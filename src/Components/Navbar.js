@@ -16,6 +16,7 @@ const PAGES = [
 	"Skills",
 	"Work experience",
 	"Projects",
+	"Contact me",
 ];
 
 function Navbar() {

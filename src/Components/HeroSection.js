@@ -28,8 +28,8 @@ function HeroSection() {
 			<Container style={STYLES.container}>
 				<svg
 					style={STYLES.hero}
-					width="311"
-					height="309"
+					width="90%"
+					height="60%"
 					viewBox="0 0 311 309"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -43,8 +43,8 @@ function HeroSection() {
 				</svg>
 				<svg
 					style={STYLES.hero}
-					width="282"
-					height="300"
+					width="90%"
+					height="60%"
 					viewBox="0 0 282 300"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@ function HeroSection() {
 						I am Rui Yan
 					</Typography>
 					<Typography
-						variant="subtitle2"
+						variant="body1"
 						component="div"
 					>
 						Software Developer

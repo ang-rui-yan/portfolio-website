@@ -15,6 +15,7 @@ const PAGES = [
 	"Skills",
 	"Work experience",
 	"Projects",
+	"Contact me",
 ];
 
 const NavbarDrawer = () => {

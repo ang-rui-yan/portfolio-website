@@ -3,3 +3,6 @@ html {
 	margin: 0;
 	font-family: "Poppins", sans-serif;
 }
+.poppinFont {
+	font-family: "Poppins", sans-serif !important;
+}
