@@ -1,28 +1,55 @@
-import { Typography } from "@mui/material";
-import { Container } from "@mui/system";
-import React from "react";
+import { styled, Typography } from '@mui/material';
+import { Container } from '@mui/system';
+import React from 'react';
 
 const STYLES = {
 	hero: {
-		position: "absolute",
-		left: "50%",
-		top: "55%",
-		transform: "translate(-50%, -50%)",
+		position: 'absolute',
+		left: '50%',
+		top: '55%',
+		transform: 'translate(-50%, -50%)',
 	},
 	text: {
-		textAlign: "center",
-		position: "absolute",
-		left: "50%",
-		top: "55%",
-		width: "100%",
-		transform: "translate(-50%, -50%)",
+		textAlign: 'center',
+		position: 'absolute',
+		left: '50%',
+		top: '55%',
+		width: '100%',
+		transform: 'translate(-50%, -50%)',
 	},
 	bold: {
-		fontWeight: "600",
+		fontWeight: '600',
 	},
 };
 
 function HeroSection() {
+	const LargeText = styled('div')(({ theme }) => ({
+		fontSize: '2rem',
+		'@media (min-width:600px)': {
+			fontSize: '2rem',
+		},
+		[theme.breakpoints.up('md')]: {
+			fontSize: '3.5rem',
+		},
+	}));
+	const SmallText = styled('div')(({ theme }) => ({
+		fontSize: '1.2rem',
+		'@media (min-width:600px)': {
+			fontSize: '1.2rem',
+		},
+		[theme.breakpoints.up('md')]: {
+			fontSize: '1.8rem',
+		},
+	}));
+	const Subtitle = styled('div')(({ theme }) => ({
+		fontSize: '1rem',
+		'@media (min-width:600px)': {
+			fontSize: '1rem',
+		},
+		[theme.breakpoints.up('md')]: {
+			fontSize: '1.5rem',
+		},
+	}));
 	return (
 		<>
 			<Container style={STYLES.container}>
@@ -57,32 +84,12 @@ function HeroSection() {
 					/>
 				</svg>
 				<div style={STYLES.text}>
-					<Typography
-						variant="body1"
-						component="div"
-					>
-						Hello!
-					</Typography>
-					<Typography
-						variant="h5"
-						style={{ fontWeight: 500 }}
-					>
-						I am Rui Yan
-					</Typography>
-					<Typography
-						variant="body1"
-						component="div"
-					>
-						Software Developer
-					</Typography>
+					<SmallText>Hello!</SmallText>
+					<LargeText>I am Rui Yan</LargeText>
+					<SmallText>Software Developer</SmallText>
 					<br />
 					<br />
-					<Typography
-						variant="subtitle1"
-						component="div"
-					>
-						Welcome to my website!
-					</Typography>
+					<Subtitle>Welcome to my website!</Subtitle>
 				</div>
 			</Container>
 		</>

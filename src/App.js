@@ -1,32 +1,32 @@
-import { CssBaseline, Grid, ThemeProvider } from "@mui/material";
-import React, { useRef } from "react";
-import theme from "./theme";
-import useScrollSnap from "react-use-scroll-snap";
+import { CssBaseline, Grid, ThemeProvider } from '@mui/material';
+import React, { useRef } from 'react';
+import theme from './assets/theme';
+import useScrollSnap from 'react-use-scroll-snap';
 
-import AboutMeSection from "./Components/AboutMeSection";
-import ContactSection from "./Components/ContactSection";
-import EducationSection from "./Components/EducationSection";
-import HeroSection from "./Components/HeroSection";
-import Navbar from "./Components/Navbar";
-import ProjectSection from "./Components/ProjectSection";
-import SkillSection from "./Components/SkillSection";
-import WorkExperienceSection from "./Components/WorkExperienceSection";
+import AboutMeSection from './components/AboutMeSection';
+import ContactSection from './components/ContactSection';
+import EducationSection from './components/EducationSection';
+import HeroSection from './components/HeroSection';
+import Navbar from './components/Navbar';
+import ProjectSection from './components/ProjectSection';
+import SkillSection from './components/SkillSection';
+import WorkExperienceSection from './components/WorkExperienceSection';
 
 const STYLES = {
 	container: {
-		height: "100vh",
+		height: '100vh',
 	},
 	small_container: {
-		height: "50vh",
+		height: '50vh',
 	},
 	alternate: {
-		backgroundColor: "#122E4F",
+		backgroundColor: '#122E4F',
 	},
 };
 
 function App() {
 	const scrollRef = useRef(null);
-	useScrollSnap({ ref: scrollRef, duration: 60, delay: 20 });
+	// useScrollSnap({ ref: scrollRef, duration: 60, delay: 20 });
 
 	return (
 		<React.Fragment>
@@ -48,11 +48,7 @@ function App() {
 					</Grid>
 					<Grid
 						item
-						style={Object.assign(
-							{},
-							STYLES.container,
-							STYLES.alternate
-						)}
+						style={Object.assign({}, STYLES.container, STYLES.alternate)}
 					>
 						<AboutMeSection />
 					</Grid>
@@ -64,11 +60,7 @@ function App() {
 					</Grid>
 					<Grid
 						item
-						style={Object.assign(
-							{},
-							STYLES.container,
-							STYLES.alternate
-						)}
+						style={Object.assign({}, STYLES.container, STYLES.alternate)}
 					>
 						<SkillSection />
 					</Grid>
@@ -80,11 +72,7 @@ function App() {
 					</Grid>
 					<Grid
 						item
-						style={Object.assign(
-							{},
-							STYLES.container,
-							STYLES.alternate
-						)}
+						style={Object.assign({}, STYLES.container, STYLES.alternate)}
 					>
 						<ProjectSection />
 					</Grid>
