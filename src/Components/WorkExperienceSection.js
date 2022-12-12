@@ -1,18 +1,17 @@
-import { Typography } from "@mui/material";
-import React from "react";
+import { Typography } from '@mui/material';
+import React from 'react';
+import StyledSection from './StyledSection';
 
-function WorkExperienceSection() {
+function WorkExperienceSection({ isAlternate }) {
 	return (
-		<>
-			<div
-				style={{
-					padding: "20px",
-					paddingTop: "60px",
-				}}
+		<StyledSection isAlternate={isAlternate}>
+			<Typography
+				variant="h4"
+				component="div"
 			>
-				<Typography>Work Experience</Typography>
-			</div>
-		</>
+				Work Experience
+			</Typography>
+		</StyledSection>
 	);
 }
 

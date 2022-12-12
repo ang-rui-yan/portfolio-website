@@ -1,18 +1,18 @@
-import { Typography } from "@mui/material";
-import React from "react";
+import { Typography } from '@mui/material';
+import React from 'react';
+import StyledSection from './StyledSection';
 
-function ProjectSection() {
+function ProjectSection({ isAlternate }) {
 	return (
-		<>
-			<div
-				style={{
-					padding: "20px",
-					paddingTop: "60px",
-				}}
+		<StyledSection isAlternate={isAlternate}>
+			<Typography
+				color="white"
+				variant="h4"
+				component="div"
 			>
-				<Typography color="white">Projects</Typography>
-			</div>
-		</>
+				Projects
+			</Typography>
+		</StyledSection>
 	);
 }
 

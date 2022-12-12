@@ -3,6 +3,10 @@ import { Container } from '@mui/system';
 import React from 'react';
 
 const STYLES = {
+	container: {
+		position: 'relative',
+		height: '100vh',
+	},
 	hero: {
 		position: 'absolute',
 		left: '50%',

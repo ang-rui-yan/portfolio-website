@@ -1,5 +1,6 @@
 import { Typography } from '@mui/material';
 import React from 'react';
+import StyledSection from './StyledSection';
 
 function TimelineComponent({ timeline, university, content }) {
 	return (
@@ -7,15 +8,15 @@ function TimelineComponent({ timeline, university, content }) {
 			<h2>{timeline}</h2>
 			<h3>{university}</h3>
 			<ul>
-				{content.map((detail) => (
-					<li>{detail}</li>
+				{content.map((detail, index) => (
+					<li key={index}>{detail}</li>
 				))}
 			</ul>
 		</div>
 	);
 }
 
-function EducationSection() {
+function EducationSection({ isAlternate }) {
 	const data = [
 		{
 			timeline: 'Aug 2022 - Jul 2026',
@@ -37,30 +38,31 @@ function EducationSection() {
 		},
 	];
 	return (
-		<>
+		<StyledSection isAlternate={isAlternate}>
+			<Typography
+				variant="h4"
+				component="div"
+			>
+				Education
+			</Typography>
 			<div
 				style={{
-					padding: '20px',
-					paddingTop: '60px',
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+					flexDirection: 'column',
 				}}
 			>
-				<Typography
-					variant="h4"
-					component="div"
-				>
-					Education
-				</Typography>
-				<div style={{ margin: 'auto', width: '50%' }}>
-					{data.map((point) => (
-						<TimelineComponent
-							timeline={point.timeline}
-							university={point.university}
-							content={point.content}
-						/>
-					))}
-				</div>
+				{data.map((point, index) => (
+					<TimelineComponent
+						key={index}
+						timeline={point.timeline}
+						university={point.university}
+						content={point.content}
+					/>
+				))}
 			</div>
-		</>
+		</StyledSection>
 	);
 }
 

@@ -1,4 +1,4 @@
-import { CssBaseline, Grid, ThemeProvider } from '@mui/material';
+import { CssBaseline, Grid, ThemeProvider, Typography } from '@mui/material';
 import React, { useRef } from 'react';
 import theme from './assets/theme';
 import useScrollSnap from 'react-use-scroll-snap';
@@ -14,11 +14,10 @@ import WorkExperienceSection from './components/WorkExperienceSection';
 
 const STYLES = {
 	container: {
-		height: '100vh',
+		position: 'relative',
+		height: 'auto',
 	},
-	small_container: {
-		height: '50vh',
-	},
+	small_container: { paddingBottom: '40px' },
 	alternate: {
 		backgroundColor: '#122E4F',
 	},
@@ -36,7 +35,6 @@ function App() {
 				<Grid
 					container
 					direction="column"
-					rowSpacing={1}
 					columns={1}
 					ref={scrollRef}
 				>
@@ -46,41 +44,23 @@ function App() {
 					>
 						<HeroSection />
 					</Grid>
-					<Grid
-						item
-						style={Object.assign({}, STYLES.container, STYLES.alternate)}
-					>
-						<AboutMeSection />
+					<Grid item>
+						<AboutMeSection isAlternate={true} />
 					</Grid>
-					<Grid
-						item
-						style={Object.assign({}, STYLES.container)}
-					>
+					<Grid item>
 						<EducationSection />
 					</Grid>
-					<Grid
-						item
-						style={Object.assign({}, STYLES.container, STYLES.alternate)}
-					>
-						<SkillSection />
+					<Grid item>
+						<SkillSection isAlternate={true} />
 					</Grid>
-					<Grid
-						item
-						style={Object.assign({}, STYLES.container)}
-					>
+					<Grid item>
 						<WorkExperienceSection />
 					</Grid>
-					<Grid
-						item
-						style={Object.assign({}, STYLES.container, STYLES.alternate)}
-					>
-						<ProjectSection />
+					<Grid item>
+						<ProjectSection isAlternate={true} />
 					</Grid>
-					<Grid
-						item
-						style={Object.assign({}, STYLES.small_container)}
-					>
-						<ContactSection />
+					<Grid item>
+						<ContactSection isSmall={true} />
 					</Grid>
 				</Grid>
 			</ThemeProvider>
