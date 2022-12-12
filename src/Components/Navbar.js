@@ -1,33 +1,29 @@
-import {
-	AppBar,
-	Tab,
-	Tabs,
-	Toolbar,
-	Typography,
-	useMediaQuery,
-	useTheme,
-} from "@mui/material";
-import React, { useState } from "react";
-import NavbarDrawer from "./NavbarDrawer";
+import { AppBar, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
+import React, { useState } from 'react';
+import NavbarDrawer from './NavbarDrawer';
 
 const PAGES = [
-	"About me",
-	"Education",
-	"Skills",
-	"Work experience",
-	"Projects",
-	"Contact me",
+	{ label: 'About me', element: 'aboutMe' },
+	{ label: 'Education', element: 'education' },
+	{ label: 'Skills', element: 'skills' },
+	{ label: 'Work experience', element: 'workExperience' },
+	{ label: 'Projects', element: 'projects' },
+	{ label: 'Contact me', element: 'contactMe' },
 ];
 
 function Navbar() {
-	const [value, setValue] = useState(0);
 	const theme = useTheme();
-	const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+	const isMatch = useMediaQuery(theme.breakpoints.down('md'));
+
+	const [value, setValue] = useState(0);
+	const handleChange = (event, newValue) => {
+		setValue(newValue);
+	};
 
 	return (
 		<React.Fragment>
 			<AppBar
-				sx={{ backgroundColor: "rgba(0,0,0,0)" }}
+				sx={{ backgroundColor: 'rgba(0,0,0,0)' }}
 				color="inherit"
 				elevation={0}
 				position="fixed"
@@ -35,7 +31,9 @@ function Navbar() {
 				<Toolbar>
 					<Typography
 						variant="h6"
-						component="div"
+						component="a"
+						href={'#hero'}
+						sx={{ color: 'inherit', textDecoration: 'inherit' }}
 					>
 						A.RY
 					</Typography>
@@ -47,18 +45,20 @@ function Navbar() {
 						<>
 							<Tabs
 								sx={{
-									marginLeft: "auto",
+									marginLeft: 'auto',
 								}}
 								textColor="inherit"
 								value={value}
-								onChange={(e, value) => setValue(value)}
+								onChange={handleChange}
 								indicatorColor="secondary"
 							>
 								{PAGES.map((page, index) => (
 									<Tab
 										key={index}
-										label={page}
-									/>
+										label={page.label}
+										component="a"
+										href={'#' + page.element}
+									></Tab>
 								))}
 							</Tabs>
 						</>

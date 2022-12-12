@@ -17,16 +17,12 @@ const data = [
 	},
 ];
 
-function SkillSection({ isAlternate }) {
+function SkillSection({ title, isAlternate }) {
 	return (
-		<StyledSection isAlternate={isAlternate}>
-			<Typography
-				variant="h4"
-				component="div"
-				color="white"
-			>
-				Skills
-			</Typography>
+		<StyledSection
+			title={title}
+			isAlternate={isAlternate}
+		>
 			<Grid
 				container
 				spacing={5}

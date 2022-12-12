@@ -4,7 +4,7 @@ import React from 'react';
 import standingImage from '../assets/images/standing.png';
 import StyledSection from './StyledSection';
 
-function AboutMeSection({ isAlternate }) {
+function AboutMeSection({ title, isAlternate }) {
 	const CustomBodyText = styled('div')(({ theme }) => ({
 		margin: 'auto',
 		marginBottom: breakpoints.isXs || breakpoints.isSm ? 20 : 50,
@@ -24,70 +24,75 @@ function AboutMeSection({ isAlternate }) {
 	};
 
 	return (
-		<StyledSection isAlternate={isAlternate}>
-			<Typography
-				variant="h4"
-				component="div"
-			>
-				About Me
-			</Typography>
-
+		<StyledSection
+			title={title}
+			isAlternate={isAlternate}
+		>
 			<div
 				style={{
 					textAlign: 'center',
 					alignItems: 'center',
 				}}
 			>
-				<svg
-					style={{ marginTop: 5, marginBottom: 10 }}
-					width={breakpoints.isXs || breakpoints.isSm ? '55%' : '20%'}
-					height="70%"
-					viewBox="0 0 185 192"
-					fill="none"
+				<div
+					sx={{
+						resize: 'both',
+						overflow: 'auto',
+						border: '1px dashed #aaa',
+					}}
 				>
-					<rect
-						x="10.6914"
-						y="42.5919"
-						width="149.194"
-						height="149.194"
-						rx="8"
-						transform="rotate(-5 10.6914 42.5919)"
-						fill="#A0B7E2"
-					/>
-					<rect
-						x="16.9082"
-						y="35.8065"
-						width="149.194"
-						height="149.194"
-						rx="8"
-						fill="#DBE2EF"
-					/>
-					<rect
-						width="185"
-						height="185"
-						fill="url(#pattern0)"
-					/>
-					<defs>
-						<pattern
-							id="pattern0"
-							patternContentUnits="objectBoundingBox"
-							width="1"
-							height="1"
-						>
-							<use
-								href="#selfImage"
-								transform="translate(0 -0.166282) scale(0.00230947)"
-							/>
-						</pattern>
-						<image
-							id="selfImage"
-							width="433"
-							height="870"
-							href={standingImage}
+					<svg
+						style={{
+							marginTop: 5,
+							marginBottom: 10,
+							width: breakpoints.isXs || breakpoints.isSm ? '60%' : '30%',
+						}}
+						viewBox="0 0 185 192"
+						fill="none"
+					>
+						<rect
+							x="10.6914"
+							y="42.5919"
+							width="149.194"
+							height="149.194"
+							rx="8"
+							transform="rotate(-5 10.6914 42.5919)"
+							fill="#A0B7E2"
 						/>
-					</defs>
-				</svg>
-
+						<rect
+							x="16.9082"
+							y="35.8065"
+							width="149.194"
+							height="149.194"
+							rx="8"
+							fill="#DBE2EF"
+						/>
+						<rect
+							width="185"
+							height="185"
+							fill="url(#pattern0)"
+						/>
+						<defs>
+							<pattern
+								id="pattern0"
+								patternContentUnits="objectBoundingBox"
+								width="1"
+								height="1"
+							>
+								<use
+									href="#selfImage"
+									transform="translate(0 -0.166282) scale(0.00230947)"
+								/>
+							</pattern>
+							<image
+								id="selfImage"
+								width="433"
+								height="870"
+								href={standingImage}
+							/>
+						</defs>
+					</svg>
+				</div>
 				<CustomBodyText>
 					I am currently pursuing a degree in Computer Science in Singapore Management
 					University (SMU).

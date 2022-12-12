@@ -5,17 +5,17 @@ import {
 	ListItemButton,
 	ListItemIcon,
 	ListItemText,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import React, { useState } from "react";
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import React, { useState } from 'react';
 
 const PAGES = [
-	"About me",
-	"Education",
-	"Skills",
-	"Work experience",
-	"Projects",
-	"Contact me",
+	{ label: 'About me', element: 'aboutMe' },
+	{ label: 'Education', element: 'education' },
+	{ label: 'Skills', element: 'skills' },
+	{ label: 'Work experience', element: 'workExperience' },
+	{ label: 'Projects', element: 'projects' },
+	{ label: 'Contact me', element: 'contactMe' },
 ];
 
 const NavbarDrawer = () => {
@@ -33,16 +33,18 @@ const NavbarDrawer = () => {
 						<ListItemButton
 							onClick={() => setOpenDrawer(!openDrawer)}
 							key={index}
+							component="a"
+							href={'#' + page.element}
 						>
 							<ListItemIcon>
-								<ListItemText>{page}</ListItemText>
+								<ListItemText>{page.label}</ListItemText>
 							</ListItemIcon>
 						</ListItemButton>
 					))}
 				</List>
 			</Drawer>
 			<IconButton
-				sx={{ color: "inherit", marginLeft: "auto" }}
+				sx={{ color: 'inherit', marginLeft: 'auto' }}
 				onClick={() => setOpenDrawer(!openDrawer)}
 			>
 				<MenuIcon />

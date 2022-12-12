@@ -41,26 +41,58 @@ function App() {
 					<Grid
 						item
 						style={STYLES.container}
+						id="hero"
 					>
+						{/* is not part of styledsection */}
 						<HeroSection />
 					</Grid>
-					<Grid item>
-						<AboutMeSection isAlternate={true} />
+					<Grid
+						item
+						id="aboutMe"
+					>
+						<AboutMeSection
+							title="About Me"
+							isAlternate={true}
+						/>
 					</Grid>
-					<Grid item>
-						<EducationSection />
+					<Grid
+						item
+						id="education"
+					>
+						<EducationSection title="Education" />
 					</Grid>
-					<Grid item>
-						<SkillSection isAlternate={true} />
+					<Grid
+						item
+						id="skills"
+					>
+						<SkillSection
+							title="Skills"
+							isAlternate={true}
+						/>
 					</Grid>
-					<Grid item>
-						<WorkExperienceSection />
+					<Grid
+						item
+						id="workExperience"
+					>
+						<WorkExperienceSection title="Work experience" />
 					</Grid>
-					<Grid item>
-						<ProjectSection isAlternate={true} />
+					<Grid
+						item
+						id="projects"
+					>
+						<ProjectSection
+							title="Project"
+							isAlternate={true}
+						/>
 					</Grid>
-					<Grid item>
-						<ContactSection isSmall={true} />
+					<Grid
+						item
+						id="contactMe"
+					>
+						<ContactSection
+							title="Get in touch"
+							isSmall={true}
+						/>
 					</Grid>
 				</Grid>
 			</ThemeProvider>

@@ -1,12 +1,23 @@
 import React from 'react';
 import { Container, styled, Typography } from '@mui/material';
 
-function StyledSection({ isAlternate, isSmall, children }) {
+const styles = {
+	positionCenter: {
+		position: 'absolute',
+		top: '50%',
+		left: '50%',
+		transform: 'translate(-50%, -50%)',
+	},
+};
+
+function StyledSection({ title, isAlternate, isSmall, children }) {
 	const CustomContainer = styled('div')(({ theme }) => ({
 		backgroundColor: isAlternate ? '#122E4F' : '#',
 		color: isAlternate ? 'white' : 'black',
-		height: isSmall ? '100%' : '100vh',
+		minHeight: isSmall ? '100%' : '100vh',
+		height: '100%',
 		padding: '80px 0px',
+		position: 'relative',
 	}));
 	const Subtitle = styled('div')(({ theme }) => ({
 		fontSize: '1rem',
@@ -21,9 +32,17 @@ function StyledSection({ isAlternate, isSmall, children }) {
 	return (
 		<CustomContainer>
 			<Container>
-				{React.Children.map(children, (child) => (
-					<div>{child}</div>
-				))}
+				<Typography
+					variant="h4"
+					component="div"
+				>
+					{title}
+				</Typography>
+				<Container sx={isSmall ? '' : styles.positionCenter}>
+					{React.Children.map(children, (child) => (
+						<div>{child}</div>
+					))}
+				</Container>
 			</Container>
 		</CustomContainer>
 	);

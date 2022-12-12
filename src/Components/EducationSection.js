@@ -16,7 +16,7 @@ function TimelineComponent({ timeline, university, content }) {
 	);
 }
 
-function EducationSection({ isAlternate }) {
+function EducationSection({ title, isAlternate }) {
 	const data = [
 		{
 			timeline: 'Aug 2022 - Jul 2026',
@@ -38,13 +38,10 @@ function EducationSection({ isAlternate }) {
 		},
 	];
 	return (
-		<StyledSection isAlternate={isAlternate}>
-			<Typography
-				variant="h4"
-				component="div"
-			>
-				Education
-			</Typography>
+		<StyledSection
+			title={title}
+			isAlternate={isAlternate}
+		>
 			<div
 				style={{
 					display: 'flex',

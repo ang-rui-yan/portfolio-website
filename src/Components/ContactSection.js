@@ -2,18 +2,13 @@ import { Button, Grid, makeStyles, styled, TextField, Typography } from '@mui/ma
 import React from 'react';
 import StyledSection from './StyledSection';
 
-function ContactSection({ isAlternate, isSmall }) {
+function ContactSection({ title, isAlternate, isSmall }) {
 	return (
 		<StyledSection
+			title={title}
 			isAlternate={isAlternate}
 			isSmall={isSmall}
 		>
-			<Typography
-				variant="h4"
-				component="div"
-			>
-				Get in touch
-			</Typography>
 			<Grid
 				container
 				sx={{ paddingTop: '40px' }}
