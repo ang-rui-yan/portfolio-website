@@ -30,7 +30,7 @@ function StyledSection({ title, isAlternate, isSmall, children }) {
 	}));
 
 	return (
-		<CustomContainer>
+		<CustomContainer className={isAlternate ? 'alternate-element' : ''}>
 			<Container>
 				<Typography
 					variant="h4"
