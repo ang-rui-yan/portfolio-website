@@ -1,4 +1,4 @@
-import { Typography, styled, Container, Grid } from '@mui/material';
+import { Typography, styled, Container, Grid, Chip, useMediaQuery } from '@mui/material';
 import React from 'react';
 
 // import Swiper and modules styles
@@ -19,21 +19,26 @@ const CustomSlide = ({ details }) => {
 		height: '100%',
 		width: '100%',
 		textAlign: 'left',
-		// display: 'flex',
-		// justifyContent: 'center',
-		// alignItems: 'center',
 	}));
+	const breakpoints = {
+		isSmallest: useMediaQuery('(max-height: 680px)'),
+		isNormalMobile: useMediaQuery('(max-height: 800px)'),
+		isTabletLaptop: useMediaQuery('(min-height: 856px)'),
+	};
+
 	return (
 		<CustomSlideContainer className="custom-slide">
 			<Container sx={{ height: '100%', width: '90%' }}>
 				<Grid
 					container
 					sx={{
-						height: '100%',
 						display: 'flex',
 						justifyContent: 'center',
 						alignItems: 'center',
+						height: '100%',
 					}}
+					padding={2}
+					spacing={0}
 				>
 					<Grid
 						item
@@ -60,15 +65,34 @@ const CustomSlide = ({ details }) => {
 						xs={12}
 						sm={12}
 						md={6}
-						sx={{ padding: '20px' }}
+						sx={{}}
 					>
 						<Typography
 							variant="h6"
-							sx={{ margin: '10px auto' }}
+							sx={{ marginTop: '10px' }}
 						>
 							{details.projectTitle}
 						</Typography>
-						<Typography component="div">{details.description}</Typography>
+						<div>
+							{details.programmingSkills.map((skill, index) => (
+								<Chip
+									key={index}
+									label={skill}
+									size="small"
+								/>
+							))}
+						</div>
+						<Typography
+							variant="caption"
+							component="div"
+							sx={{
+								marginTop: '10px',
+								overflowY: 'auto',
+								height: '25vh',
+							}}
+						>
+							{details.description}
+						</Typography>
 					</Grid>
 				</Grid>
 			</Container>

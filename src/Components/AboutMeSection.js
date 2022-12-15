@@ -11,7 +11,7 @@ function AboutMeSection({ title, isAlternate }) {
 		width: '100%',
 		fontSize: '0.7rem',
 		[theme.breakpoints.up('sm')]: {
-			fontSize: '1.2rem',
+			fontSize: '1rem',
 		},
 	}));
 
@@ -38,9 +38,9 @@ function AboutMeSection({ title, isAlternate }) {
 				<div>
 					<svg
 						style={{
-							width: breakpoints.isXs || breakpoints.isSm ? '60%' : '45%',
+							width: breakpoints.isLg ? '30%' : '60%',
 						}}
-						viewBox="0 0 185 192"
+						viewBox="0 20 185 192"
 						fill="none"
 					>
 						<rect

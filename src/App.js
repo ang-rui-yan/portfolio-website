@@ -13,10 +13,6 @@ import SkillSection from './components/SkillSection';
 import WorkExperienceSection from './components/WorkExperienceSection';
 
 const STYLES = {
-	container: {
-		position: 'relative',
-		height: 'auto',
-	},
 	alternate: {
 		backgroundColor: '#122E4F',
 	},
@@ -81,8 +77,8 @@ function App() {
 				>
 					<Grid
 						item
-						style={STYLES.container}
 						id="hero"
+						sx={{ width: '100%' }}
 					>
 						{/* is not part of styledsection */}
 						<HeroSection />
@@ -91,6 +87,7 @@ function App() {
 						<Grid
 							item
 							id={section.id}
+							sx={{ width: '100%' }}
 						>
 							{section.sectionComponent()}
 						</Grid>

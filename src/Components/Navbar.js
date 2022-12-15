@@ -63,7 +63,7 @@ function Navbar() {
 	return (
 		<React.Fragment>
 			<AppBar
-				sx={{ backgroundColor: 'rgba(0,0,0,0)' }}
+				sx={{ backgroundColor: 'rgba(0,0,0,0)', height: '60px' }}
 				color="inherit"
 				elevation={0}
 				position="fixed"

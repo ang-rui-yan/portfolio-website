@@ -5,8 +5,8 @@
 }
 .swiper-v {
 	background: #eee;
-	width: 45vh;
-	height: 45vh;
+	width: 80%;
+	aspect-ratio: 1;
 }
 
 .mySwiper {

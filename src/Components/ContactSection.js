@@ -10,80 +10,68 @@ function ContactSection({ title, isAlternate }) {
 		>
 			<Grid
 				container
-				sx={{ padding: '40px 0px 0px 0px' }}
 				spacing={2}
 			>
 				<Grid
 					item
 					xs={12}
-					sm={3}
+					p={4}
 				>
 					<Typography>Let's talk about everything!</Typography>
 				</Grid>
 				<Grid
 					item
 					xs={12}
-					sm={9}
+					sm={6}
 				>
-					<Grid
-						container
-						spacing={3}
-					>
-						<Grid
-							item
-							xs={12}
-							sm={6}
-						>
-							<TextField
-								fullWidth
-								label="Name"
-							/>
-						</Grid>
-						<Grid
-							item
-							xs={12}
-							sm={6}
-						>
-							<TextField
-								fullWidth
-								label="Email Address"
-							/>
-						</Grid>
+					<TextField
+						fullWidth
+						label="Name"
+					/>
+				</Grid>
+				<Grid
+					item
+					xs={12}
+					sm={6}
+				>
+					<TextField
+						fullWidth
+						label="Email Address"
+					/>
+				</Grid>
 
-						<Grid
-							item
-							xs={12}
-						>
-							<TextField
-								label="Subject"
-								fullWidth
-							/>
-						</Grid>
-						<Grid
-							item
-							xs={12}
-						>
-							<TextField
-								label="Message"
-								fullWidth
-								multiline
-								rows={4}
-							/>
-						</Grid>
-						<Grid
-							item
-							xs={12}
-						>
-							<Button
-								variant="contained"
-								fullWidth
-								size="small"
-								sx={{ width: '20%', textTransform: 'capitalize' }}
-							>
-								Send message
-							</Button>
-						</Grid>
-					</Grid>
+				<Grid
+					item
+					xs={12}
+				>
+					<TextField
+						label="Subject"
+						fullWidth
+					/>
+				</Grid>
+				<Grid
+					item
+					xs={12}
+				>
+					<TextField
+						label="Message"
+						fullWidth
+						multiline
+						rows={4}
+					/>
+				</Grid>
+				<Grid
+					item
+					xs={12}
+				>
+					<Button
+						variant="contained"
+						fullWidth
+						size="small"
+						sx={{ width: '20%', textTransform: 'capitalize' }}
+					>
+						Send message
+					</Button>
 				</Grid>
 			</Grid>
 		</StyledSection>
