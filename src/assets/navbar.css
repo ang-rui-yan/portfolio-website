@@ -28,6 +28,9 @@
 .on-alternate-color-link .nav-menu a {
 	color: white;
 }
+.on-alternate-color-link .hamburger {
+	color: white;
+}
 
 .header .navbar img {
 	width: 250px;
@@ -54,17 +57,8 @@
 	border-bottom: 3px solid var(--secondary-color);
 	cursor: pointer;
 }
-
-.header:hover > .alternate-element {
-	background-color: yellow !important;
-}
-
 .header .navbar ul {
 	list-style: none;
-}
-
-.hamburger {
-	display: none;
 }
 
 @media screen and (max-width: 940px) {

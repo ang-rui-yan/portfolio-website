@@ -1,4 +1,4 @@
-import { CssBaseline, Grid, ThemeProvider, Typography } from '@mui/material';
+import { CssBaseline, Grid, ThemeProvider } from '@mui/material';
 import React, { useRef } from 'react';
 import theme from './assets/theme';
 import useScrollSnap from 'react-use-scroll-snap';
@@ -23,9 +23,56 @@ const STYLES = {
 	},
 };
 
+const sections = [
+	{
+		id: 'aboutMe',
+		sectionComponent: () => (
+			<AboutMeSection
+				title="About Me"
+				isAlternate={true}
+			/>
+		),
+	},
+	{
+		id: 'education',
+		sectionComponent: () => <EducationSection title="Education" />,
+	},
+	{
+		id: 'skills',
+		sectionComponent: () => (
+			<SkillSection
+				title="Skills"
+				isAlternate={true}
+			/>
+		),
+	},
+	{
+		id: 'workExperience',
+		sectionComponent: () => <WorkExperienceSection title="Work experience" />,
+	},
+	{
+		id: 'projects',
+		sectionComponent: () => (
+			<ProjectSection
+				title="Projects"
+				isAlternate={true}
+			/>
+		),
+	},
+	{
+		id: 'contactMe',
+		sectionComponent: () => (
+			<ContactSection
+				title="Get in touch"
+				isSmall={true}
+			/>
+		),
+	},
+];
+
 function App() {
 	const scrollRef = useRef(null);
-	// useScrollSnap({ ref: scrollRef, duration: 60, delay: 20 });
+	useScrollSnap({ ref: scrollRef, duration: 30, delay: 10 });
 
 	return (
 		<React.Fragment>
@@ -46,54 +93,14 @@ function App() {
 						{/* is not part of styledsection */}
 						<HeroSection />
 					</Grid>
-					<Grid
-						item
-						id="aboutMe"
-					>
-						<AboutMeSection
-							title="About Me"
-							isAlternate={true}
-						/>
-					</Grid>
-					<Grid
-						item
-						id="education"
-					>
-						<EducationSection title="Education" />
-					</Grid>
-					<Grid
-						item
-						id="skills"
-					>
-						<SkillSection
-							title="Skills"
-							isAlternate={true}
-						/>
-					</Grid>
-					<Grid
-						item
-						id="workExperience"
-					>
-						<WorkExperienceSection title="Work experience" />
-					</Grid>
-					<Grid
-						item
-						id="projects"
-					>
-						<ProjectSection
-							title="Project"
-							isAlternate={true}
-						/>
-					</Grid>
-					<Grid
-						item
-						id="contactMe"
-					>
-						<ContactSection
-							title="Get in touch"
-							isSmall={true}
-						/>
-					</Grid>
+					{sections.map((section) => (
+						<Grid
+							item
+							id={section.id}
+						>
+							{section.sectionComponent()}
+						</Grid>
+					))}
 				</Grid>
 			</ThemeProvider>
 		</React.Fragment>

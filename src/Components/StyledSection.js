@@ -7,6 +7,7 @@ const styles = {
 		top: '50%',
 		left: '50%',
 		transform: 'translate(-50%, -50%)',
+		height: 'auto',
 	},
 };
 
@@ -31,7 +32,7 @@ function StyledSection({ title, isAlternate, isSmall, children }) {
 
 	return (
 		<CustomContainer className={isAlternate ? 'alternate-element' : ''}>
-			<Container>
+			<Container sx={{ height: '100%' }}>
 				<Typography
 					variant="h4"
 					component="div"

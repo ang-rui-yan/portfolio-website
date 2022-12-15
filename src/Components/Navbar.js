@@ -1,5 +1,5 @@
-import { AppBar, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
-import React, { useEffect, useRef, useState } from 'react';
+import { AppBar, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import NavbarDrawer from './NavbarDrawer';
 import '../assets/navbar.css';
