@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container, Grid, styled, Typography } from '@mui/material';
 
-function StyledSection({ title, isAlternate, children }) {
+function StyledSection({ title, isAlternate, children, isSmaller }) {
 	const CustomContainer = styled('div')(({ theme }) => ({
 		backgroundColor: isAlternate ? '#122E4F' : '#',
 		color: isAlternate ? 'white' : 'black',
-		minHeight: '100vh',
+		minHeight: isSmaller ? '85vh' : '100vh',
 		height: '100%',
 		padding: '60px 0',
 		display: 'flex',

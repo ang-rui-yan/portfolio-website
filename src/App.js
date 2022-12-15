@@ -10,7 +10,7 @@ import HeroSection from './components/HeroSection';
 import Navbar from './components/Navbar';
 import ProjectSection from './components/ProjectSection';
 import SkillSection from './components/SkillSection';
-import WorkExperienceSection from './components/WorkExperienceSection';
+import Footer from './components/Footer';
 
 const STYLES = {
 	alternate: {
@@ -42,21 +42,18 @@ const sections = [
 		),
 	},
 	{
-		id: 'workExperience',
-		sectionComponent: () => <WorkExperienceSection title="Work experience" />,
-	},
-	{
 		id: 'projects',
-		sectionComponent: () => (
-			<ProjectSection
-				title="Projects"
-				isAlternate={true}
-			/>
-		),
+		sectionComponent: () => <ProjectSection title="Projects" />,
 	},
 	{
 		id: 'contactMe',
-		sectionComponent: () => <ContactSection title="Get in touch" />,
+		sectionComponent: () => (
+			<ContactSection
+				title="Get in touch"
+				isAlternate={true}
+				isSmaller={true}
+			/>
+		),
 	},
 ];
 
@@ -93,6 +90,7 @@ function App() {
 						</Grid>
 					))}
 				</Grid>
+				<Footer />
 			</ThemeProvider>
 		</React.Fragment>
 	);
