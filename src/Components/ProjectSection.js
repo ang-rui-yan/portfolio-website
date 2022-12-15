@@ -3,8 +3,9 @@ import React from 'react';
 
 // import Swiper and modules styles
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper';
+import { Mousewheel, EffectFade, Pagination, Navigation } from 'swiper';
 import 'swiper/css';
+import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../assets/projectSection.css';
@@ -13,38 +14,60 @@ import StyledSection from './StyledSection';
 
 import { projects } from '../data/projects.js';
 
-/* PROJECT SECTION
-Currently, there is a switch to use between 
-1. carousel
-2. tiles
-
-Decided to use tiles instead but didnt want to ditch the carousel which is still uncompleted too.
-
-*/
-
-// Not use carousel for now
-const CustomSlide = ({ className, details }) => {
+const CustomSlide = ({ details }) => {
 	const CustomSlideContainer = styled('div')(({ theme }) => ({
 		height: '100%',
 		width: '100%',
+		textAlign: 'left',
 		// display: 'flex',
 		// justifyContent: 'center',
 		// alignItems: 'center',
 	}));
 	return (
-		<CustomSlideContainer className={className}>
-			<Container>
-				<Grid container>
+		<CustomSlideContainer className="custom-slide">
+			<Container sx={{ height: '100%', width: '90%' }}>
+				<Grid
+					container
+					sx={{
+						height: '100%',
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+					}}
+				>
 					<Grid
 						item
 						xs={12}
+						sm={12}
+						md={6}
 					>
-						<Typography variant="h6">{details.projectTitle}</Typography>
+						<Swiper
+							className="mySwiper2 swiper-v"
+							direction={'vertical'}
+							pagination={{
+								clickable: true,
+							}}
+							mousewheel={true}
+							modules={[Mousewheel, Pagination]}
+						>
+							{details.images.map((image) => (
+								<SwiperSlide>{image}</SwiperSlide>
+							))}
+						</Swiper>
 					</Grid>
 					<Grid
 						item
 						xs={12}
+						sm={12}
+						md={6}
+						sx={{ padding: '20px' }}
 					>
+						<Typography
+							variant="h6"
+							sx={{ margin: '10px auto' }}
+						>
+							{details.projectTitle}
+						</Typography>
 						<Typography component="div">{details.description}</Typography>
 					</Grid>
 				</Grid>
@@ -63,30 +86,21 @@ const CarouselProject = () => {
 			slidesPerView={'auto'}
 			centeredSlides={true}
 			navigation={true}
-			spaceBetween={30}
 			loop={true}
-			modules={[Pagination, Navigation]}
-			className="mySwiper"
+			effect={'fade'}
+			modules={[EffectFade, Navigation, Pagination]}
+			className="mySwiper swiper-h"
 		>
 			{projects.map((element) => (
 				<SwiperSlide>
-					<CustomSlide
-						className="custom-slide"
-						details={element}
-					></CustomSlide>
+					<CustomSlide details={element}></CustomSlide>
 				</SwiperSlide>
 			))}
 		</Swiper>
 	);
 };
 
-// Use tiles instead
-const TileProject = () => {
-	return <div>Tiles</div>;
-};
-
 function ProjectSection({ title, isAlternate }) {
-	let isCarousel = false;
 	return (
 		<StyledSection
 			title={title}
@@ -94,7 +108,7 @@ function ProjectSection({ title, isAlternate }) {
 			sx={{ height: '100%' }}
 		>
 			<div style={{ height: '100%' }}>
-				{isCarousel ? <CarouselProject /> : <TileProject />}
+				<CarouselProject />
 			</div>
 		</StyledSection>
 	);

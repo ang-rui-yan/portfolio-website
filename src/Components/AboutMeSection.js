@@ -8,7 +8,7 @@ function AboutMeSection({ title, isAlternate }) {
 	const CustomBodyText = styled('div')(({ theme }) => ({
 		margin: 'auto',
 		marginBottom: breakpoints.isXs || breakpoints.isSm ? 20 : 50,
-		width: breakpoints.isXs || breakpoints.isSm ? '90%' : '60%',
+		width: '100%',
 		fontSize: '0.7rem',
 		[theme.breakpoints.up('sm')]: {
 			fontSize: '1.2rem',
@@ -32,20 +32,13 @@ function AboutMeSection({ title, isAlternate }) {
 				style={{
 					textAlign: 'center',
 					alignItems: 'center',
+					width: '100%',
 				}}
 			>
-				<div
-					sx={{
-						resize: 'both',
-						overflow: 'auto',
-						border: '1px dashed #aaa',
-					}}
-				>
+				<div>
 					<svg
 						style={{
-							marginTop: 5,
-							marginBottom: 10,
-							width: breakpoints.isXs || breakpoints.isSm ? '60%' : '30%',
+							width: breakpoints.isXs || breakpoints.isSm ? '60%' : '45%',
 						}}
 						viewBox="0 0 185 192"
 						fill="none"

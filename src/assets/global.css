@@ -6,6 +6,7 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 	background-color: rgba(0, 10, 31, 255);
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 .link {

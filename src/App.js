@@ -17,7 +17,6 @@ const STYLES = {
 		position: 'relative',
 		height: 'auto',
 	},
-	small_container: { paddingBottom: '40px' },
 	alternate: {
 		backgroundColor: '#122E4F',
 	},
@@ -61,12 +60,7 @@ const sections = [
 	},
 	{
 		id: 'contactMe',
-		sectionComponent: () => (
-			<ContactSection
-				title="Get in touch"
-				isSmall={true}
-			/>
-		),
+		sectionComponent: () => <ContactSection title="Get in touch" />,
 	},
 ];
 

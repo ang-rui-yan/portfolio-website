@@ -2,16 +2,16 @@ import { Button, Grid, makeStyles, styled, TextField, Typography } from '@mui/ma
 import React from 'react';
 import StyledSection from './StyledSection';
 
-function ContactSection({ title, isAlternate, isSmall }) {
+function ContactSection({ title, isAlternate }) {
 	return (
 		<StyledSection
 			title={title}
 			isAlternate={isAlternate}
-			isSmall={isSmall}
 		>
 			<Grid
 				container
-				sx={{ paddingTop: '40px' }}
+				sx={{ padding: '40px 0px 0px 0px' }}
+				spacing={2}
 			>
 				<Grid
 					item

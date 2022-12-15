@@ -1,14 +1,22 @@
-.swiper {
+.swiper-h {
 	width: 100%;
-	height: 60vh;
+	height: 75vh;
 	color: black;
+}
+.swiper-v {
+	background: #eee;
+	width: 45vh;
+	height: 45vh;
+}
+
+.mySwiper {
 }
 .custom-slide {
 	background: #fff;
 }
 .swiper-slide-prev .custom-slide,
 .swiper-slide-next .custom-slide {
-	height: 30vh;
+	/* height: 35vh; */
 	transition: width 1s, ease-out 0.5s;
 }
 
@@ -19,7 +27,6 @@
 .swiper-slide {
 	filter: blur(1px);
 	text-align: center;
-	font-size: 18px;
 
 	/* Center slide text vertically */
 	display: -webkit-box;
@@ -41,8 +48,4 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-}
-
-.swiper-slide {
-	width: 70%;
 }
