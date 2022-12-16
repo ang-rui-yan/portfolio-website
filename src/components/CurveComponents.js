@@ -145,6 +145,8 @@ const CurveComponent = ({ variant, isAlternate }) => {
 					</div>
 				</div>
 			);
+		default:
+			return;
 	}
 };
 export default CurveComponent;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, styled, Typography } from '@mui/material';
+import { Container, styled, Typography } from '@mui/material';
 
 function StyledSection({ title, isAlternate, children, isSmaller }) {
 	const CustomContainer = styled('div')(({ theme }) => ({

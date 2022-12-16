@@ -1,4 +1,4 @@
-import { Typography, styled, Container, Grid, Chip, useMediaQuery, Link } from '@mui/material';
+import { Typography, styled, Container, Grid, Chip, Link } from '@mui/material';
 import React from 'react';
 
 // import Swiper and modules styles
@@ -20,11 +20,6 @@ const CustomSlide = ({ details }) => {
 		width: '100%',
 		textAlign: 'left',
 	}));
-	const breakpoints = {
-		isSmallest: useMediaQuery('(max-height: 680px)'),
-		isNormalMobile: useMediaQuery('(max-height: 800px)'),
-		isTabletLaptop: useMediaQuery('(min-height: 856px)'),
-	};
 
 	return (
 		<CustomSlideContainer className="custom-slide">

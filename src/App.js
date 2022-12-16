@@ -1,7 +1,6 @@
 import { CssBaseline, Grid, ThemeProvider } from '@mui/material';
 import React, { useRef } from 'react';
 import theme from './assets/theme';
-import useScrollSnap from 'react-use-scroll-snap';
 
 import HeroSection from './components/HeroSection';
 import Navbar from './components/Navbar';
