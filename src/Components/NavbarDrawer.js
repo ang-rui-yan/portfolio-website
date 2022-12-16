@@ -9,14 +9,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import React, { useState } from 'react';
 
-const PAGES = [
-	{ label: 'About me', element: 'aboutMe' },
-	{ label: 'Education', element: 'education' },
-	{ label: 'Skills', element: 'skills' },
-	{ label: 'Work experience', element: 'workExperience' },
-	{ label: 'Projects', element: 'projects' },
-	{ label: 'Contact me', element: 'contactMe' },
-];
+import { pages } from '../data/navbar';
 
 const NavbarDrawer = () => {
 	const [openDrawer, setOpenDrawer] = useState(false);
@@ -29,7 +22,7 @@ const NavbarDrawer = () => {
 				onClose={() => setOpenDrawer(false)}
 			>
 				<List>
-					{PAGES.map((page, index) => (
+					{pages.map((page, index) => (
 						<ListItemButton
 							onClick={() => setOpenDrawer(!openDrawer)}
 							key={index}

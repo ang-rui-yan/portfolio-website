@@ -1,27 +1,7 @@
 import { Card, CardContent, Chip, Grid, Typography } from '@mui/material';
 import React from 'react';
 import StyledSection from './StyledSection';
-import CodeIcon from '@mui/icons-material/Code';
-import BrushIcon from '@mui/icons-material/Brush';
-import TerminalIcon from '@mui/icons-material/Terminal';
-
-const data = [
-	{
-		title: 'Programming Language',
-		icon: <CodeIcon />,
-		details: ['C#', 'Python', 'C', 'Java', 'JavaScript'],
-	},
-	{
-		title: 'Front end',
-		icon: <BrushIcon />,
-		details: ['React.js', 'HTML', 'CSS'],
-	},
-	{
-		title: 'Back end',
-		icon: <TerminalIcon />,
-		details: ['Flask', 'SQL'],
-	},
-];
+import { skills } from '../data/skills';
 
 function SkillSection({ title, isAlternate }) {
 	return (
@@ -35,7 +15,7 @@ function SkillSection({ title, isAlternate }) {
 				padding={5}
 				alignItems="stretch"
 			>
-				{data.map((content, index) => (
+				{skills.map((content, index) => (
 					<Grid
 						item
 						xs={12}

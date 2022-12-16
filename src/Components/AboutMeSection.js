@@ -97,6 +97,7 @@ function AboutMeSection({ title, isAlternate }) {
 				<Button
 					variant="contained"
 					style={{ backgroundColor: 'white', color: 'black' }}
+					disabled
 				>
 					<DownloadIcon />
 					<Typography

@@ -4,13 +4,7 @@ import { Link } from 'react-scroll';
 import NavbarDrawer from './NavbarDrawer';
 import '../assets/navbar.css';
 
-const PAGES = [
-	{ label: 'About me', element: 'aboutMe' },
-	{ label: 'Education', element: 'education' },
-	{ label: 'Skills', element: 'skills' },
-	{ label: 'Projects', element: 'projects' },
-	{ label: 'Contact me', element: 'contactMe' },
-];
+import { pages } from '../data/navbar';
 
 function Navbar() {
 	const theme = useTheme();
@@ -85,7 +79,7 @@ function Navbar() {
 						</>
 					) : (
 						<ul className={click ? 'nav-menu active' : 'nav-menu'}>
-							{PAGES.map((page, index) => (
+							{pages.map((page, index) => (
 								<li
 									key={index}
 									className="nav-item"

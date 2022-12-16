@@ -11,6 +11,7 @@ import TimelineOppositeContent, {
 	timelineOppositeContentClasses,
 } from '@mui/lab/TimelineOppositeContent';
 import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
+import { education } from '../data/education';
 
 function TimelineComponentAlternating({ timeline, university, content }) {
 	return (
@@ -93,27 +94,6 @@ function TimelineComponent({ timeline, university, content }) {
 }
 
 function EducationSection({ title, isAlternate }) {
-	const data = [
-		{
-			timeline: 'Aug 2022 - Jul 2026',
-			university: 'Singapore Management University',
-			content: [
-				'Pursuing Bachelor of Science - Computer Science',
-				'Expected year of graduation in 2026',
-				'Looking to pick a track in Artifical Intelligence or Cyberphysical system',
-			],
-		},
-		{
-			timeline: 'Apr 2017 - Mar 2020',
-			university: 'Temasek Polytechnic',
-			content: [
-				'Graduated with Diploma with Merit in Financial Business Informatics',
-				'Achieved 2nd in cohort',
-				'Graduated with Diploma Plus in Entrepreneurship and Innovation',
-			],
-		},
-	];
-
 	const breakpoints = {
 		isXXs: useMediaQuery('(max-width: 328px)'),
 		isXs: useMediaQuery('(max-width: 640px)'),
@@ -148,7 +128,7 @@ function EducationSection({ title, isAlternate }) {
 							: { width: '100%' }
 					}
 				>
-					{data.map((point, index) =>
+					{education.map((point, index) =>
 						breakpoints.isXs ? (
 							<TimelineComponent
 								key={index}

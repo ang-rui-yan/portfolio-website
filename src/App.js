@@ -59,7 +59,7 @@ const sections = [
 
 function App() {
 	const scrollRef = useRef(null);
-	useScrollSnap({ ref: scrollRef, duration: 30, delay: 10 });
+	// useScrollSnap({ ref: scrollRef, duration: 30, delay: 10 });
 
 	return (
 		<React.Fragment>
