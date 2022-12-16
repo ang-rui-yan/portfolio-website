@@ -1,4 +1,4 @@
-import { Typography, styled, Container, Grid, Chip, useMediaQuery } from '@mui/material';
+import { Typography, styled, Container, Grid, Chip, useMediaQuery, Link } from '@mui/material';
 import React from 'react';
 
 // import Swiper and modules styles
@@ -55,8 +55,8 @@ const CustomSlide = ({ details }) => {
 							mousewheel={true}
 							modules={[Mousewheel, Pagination]}
 						>
-							{details.images.map((image) => (
-								<SwiperSlide>{image}</SwiperSlide>
+							{details.images.map((image, index) => (
+								<SwiperSlide key={index}>{image}</SwiperSlide>
 							))}
 						</Swiper>
 					</Grid>
@@ -69,7 +69,9 @@ const CustomSlide = ({ details }) => {
 					>
 						<Typography
 							variant="h6"
-							sx={{ marginTop: '10px' }}
+							component={Link}
+							href={details.githubRepo}
+							sx={{ marginTop: '10px', textDecoration: 'none', color: 'inherit' }}
 						>
 							{details.projectTitle}
 						</Typography>
@@ -79,6 +81,7 @@ const CustomSlide = ({ details }) => {
 									key={index}
 									label={skill}
 									size="small"
+									sx={{ marginRight: '5px' }}
 								/>
 							))}
 						</div>
@@ -115,8 +118,8 @@ const CarouselProject = () => {
 			modules={[EffectFade, Navigation, Pagination]}
 			className="mySwiper swiper-h"
 		>
-			{projects.map((element) => (
-				<SwiperSlide>
+			{projects.map((element, index) => (
+				<SwiperSlide key={index}>
 					<CustomSlide details={element}></CustomSlide>
 				</SwiperSlide>
 			))}

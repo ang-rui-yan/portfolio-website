@@ -25,7 +25,7 @@ const STYLES = {
 		position: 'absolute',
 		width: '40em',
 		height: '40em',
-		filter: 'blur(2.5em)',
+		filter: 'blur(7vh)',
 	},
 	text: {
 		textAlign: 'center',
@@ -88,13 +88,13 @@ function HeroSection() {
 									id="gradient"
 								>
 									<stop
-										stop-color="#DBE2EF"
-										stop-opacity="1"
+										stopColor="#DBE2EF"
+										stopOpacity="1"
 										offset="0%"
 									></stop>
 									<stop
-										stop-color="#122E4F"
-										stop-opacity="1"
+										stopColor="#122E4F"
+										stopOpacity="1"
 										offset="100%"
 									></stop>
 								</linearGradient>
@@ -106,7 +106,7 @@ function HeroSection() {
 									height="140%"
 									filterUnits="objectBoundingBox"
 									primitiveUnits="userSpaceOnUse"
-									color-interpolation-filters="sRGB"
+									colorInterpolationFilters="sRGB"
 								>
 									<feTurbulence
 										type="fractalNoise"

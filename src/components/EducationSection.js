@@ -13,7 +13,7 @@ import TimelineOppositeContent, {
 import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
 import { education } from '../data/education';
 
-function TimelineComponentAlternating({ timeline, university, content }) {
+function TimelineComponentAlternating({ timeline, university, content, isLastItem }) {
 	return (
 		<TimelineItem
 			sx={{
@@ -28,7 +28,7 @@ function TimelineComponentAlternating({ timeline, university, content }) {
 					color="primary"
 					variant="outlined"
 				></TimelineDot>
-				<TimelineConnector />
+				{isLastItem ? '' : <TimelineConnector />}
 			</TimelineSeparator>
 			<TimelineContent sx={{ paddingTop: '1px', paddingBottom: 5, px: 4 }}>
 				<Typography
@@ -47,7 +47,7 @@ function TimelineComponentAlternating({ timeline, university, content }) {
 	);
 }
 
-function TimelineComponent({ timeline, university, content }) {
+function TimelineComponent({ timeline, university, content, isLastItem }) {
 	const breakpoints = {
 		isXXs: useMediaQuery('(max-width: 380px)'),
 		isXs: useMediaQuery('(max-width: 640px)'),
@@ -60,7 +60,7 @@ function TimelineComponent({ timeline, university, content }) {
 					color="primary"
 					variant="outlined"
 				></TimelineDot>
-				<TimelineConnector />
+				{isLastItem ? '' : <TimelineConnector />}
 			</TimelineSeparator>
 			<TimelineContent sx={{ paddingTop: '1px', paddingBottom: 5, px: 4 }}>
 				<Typography
@@ -135,6 +135,7 @@ function EducationSection({ title, isAlternate }) {
 								timeline={point.timeline}
 								university={point.university}
 								content={point.content}
+								isLastItem={index + 1 === education.length}
 							/>
 						) : (
 							<TimelineComponentAlternating
@@ -142,6 +143,7 @@ function EducationSection({ title, isAlternate }) {
 								timeline={point.timeline}
 								university={point.university}
 								content={point.content}
+								isLastItem={index + 1 === education.length}
 							/>
 						)
 					)}
