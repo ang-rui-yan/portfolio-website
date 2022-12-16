@@ -1,0 +1,21 @@
+body,
+html {
+	margin: 0;
+	font-family: 'Poppins', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: rgba(0, 10, 31, 255);
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+body {
+	overflow: hidden;
+}
+
+.link {
+	cursor: pointer;
+}
+
+.poppinFont {
+	font-family: 'Poppins', sans-serif !important;
+}
